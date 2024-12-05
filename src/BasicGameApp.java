@@ -109,6 +109,10 @@ public class BasicGameApp implements Runnable {
 			astro.dy = -astro.dy;
 			astro2.dx = -astro2.dx;
 			astro2.dy = -astro2.dy;
+			astro.width = astro.width + 5;
+			astro.height = astro.height + 5;
+			astro2.dx = astro2.dx * 2;
+			astro2.dy = astro2.dy * 2;
 		}
 	}
 
