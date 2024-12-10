@@ -16,6 +16,7 @@ public class Astronaut {
     public int height;
     public boolean isAlive; //a boolean to denote if the hero is alive or dead.
     public Rectangle rec;
+    public boolean isCrashing;
 
 
     // METHOD DEFINITION SECTION
@@ -35,7 +36,7 @@ public class Astronaut {
         height = 60;
         isAlive = true;
         rec = new Rectangle(xpos, ypos, width, height);
- 
+        isCrashing = false;
     } // constructor
 
     //The move method.  Everytime this is run (or "called") the hero's x position and y position change by dx and dy

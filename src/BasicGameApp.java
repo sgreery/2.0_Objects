@@ -65,9 +65,9 @@ public class BasicGameApp implements Runnable {
        
       //variable and objects
       //create (construct) the objects needed for the game and load up 
-		astroPic = Toolkit.getDefaultToolkit().getImage("astronaut.png"); //load the picture
-		astro2Pic = Toolkit.getDefaultToolkit().getImage("leifstronaut.png");
-		backgroundPic = Toolkit.getDefaultToolkit().getImage("IMG_5060.jpg");
+		astroPic = Toolkit.getDefaultToolkit().getImage("kanye.jpg"); //load the picture
+		astro2Pic = Toolkit.getDefaultToolkit().getImage("mrwest.jpg");
+		backgroundPic = Toolkit.getDefaultToolkit().getImage("grad.jpg");
 		astro = new Astronaut(0,350);
 		astro2 = new Astronaut(780,0);
 
@@ -104,15 +104,20 @@ public class BasicGameApp implements Runnable {
 
 	}
 	public void collisions(){
-		if(astro.rec.intersects(astro2.rec)){
+		if(astro.rec.intersects(astro2.rec) && astro.isCrashing == false){
+			System.out.println("explosion!");
 			astro.dx = -astro.dx;
 			astro.dy = -astro.dy;
 			astro2.dx = -astro2.dx;
 			astro2.dy = -astro2.dy;
-			astro.width = astro.width + 5;
-			astro.height = astro.height + 5;
+			astro.width = astro.width + 20;
+			astro.height = astro.height + 20;
 			astro2.dx = astro2.dx * 2;
 			astro2.dy = astro2.dy * 2;
+			astro.isCrashing = true;
+		}
+		if(!astro.rec.intersects(astro2.rec)){
+			astro.isCrashing = false;
 		}
 	}
 
